@@ -41,15 +41,12 @@ public class ConsultaController {
 
     @PostMapping("/guardar")
     public String guardar(@ModelAttribute Consulta consulta) {
-        // Recuperar el objeto Mascota por ID
         Mascota mascota = mascotaService.buscarPorId(consulta.getMascota().getId());
         consulta.setMascota(mascota);
 
-        // Recuperar el objeto Veterinario por ID
         Veterinario veterinario = veterinarioService.buscarPorId(consulta.getVeterinario().getId());
         consulta.setVeterinario(veterinario);
 
-        // Guardar la consulta con los objetos completos de Mascota y Veterinario
         consultaService.guardar(consulta);
         return "redirect:/consultas/listar";
     }
@@ -58,8 +55,8 @@ public class ConsultaController {
     public String editar(@PathVariable Integer id, Model model) {
         Consulta consulta = consultaService.buscarPorId(id);
         model.addAttribute("consulta", consulta);
-        model.addAttribute("mascotas", mascotaService.listar());       // Agregar lista de mascotas
-        model.addAttribute("veterinarios", veterinarioService.listar()); // Agregar lista de veterinarios
+        model.addAttribute("mascotas", mascotaService.listar());
+        model.addAttribute("veterinarios", veterinarioService.listar());
         return "formConsulta";
     }
 

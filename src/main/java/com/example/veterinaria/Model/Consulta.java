@@ -19,7 +19,7 @@ public class Consulta {
     @JoinColumn(name = "veterinario_id")
     private Veterinario veterinario;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd") // Define el formato de fecha
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaConsulta;
 
     private String motivo;
