@@ -25,7 +25,6 @@ public class Consulta {
     private String motivo;
     private String diagnostico;
 
-    // Getters y setters
 
     public Integer getId() {
         return id;
