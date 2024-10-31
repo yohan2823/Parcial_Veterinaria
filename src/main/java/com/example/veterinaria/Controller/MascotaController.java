@@ -28,7 +28,7 @@ public class MascotaController {
     public String nuevo(Model model) {
         model.addAttribute("titulo", "Nueva Mascota");
         model.addAttribute("mascota", new Mascota());
-        model.addAttribute("propietarios", propietarioService.listar()); // Asegúrate de incluir propietarios
+        model.addAttribute("propietarios", propietarioService.listar());
         return "formMascota";
     }
 
@@ -42,7 +42,7 @@ public class MascotaController {
     public String editar(@PathVariable Integer id, Model model) {
         Mascota mascota = mascotaService.buscarPorId(id);
         model.addAttribute("mascota", mascota);
-        model.addAttribute("propietarios", propietarioService.listar()); // Asegúrate de incluir propietarios
+        model.addAttribute("propietarios", propietarioService.listar());
         return "formMascota";
     }
 

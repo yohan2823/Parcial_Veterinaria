@@ -34,8 +34,8 @@ public class ConsultaController {
     public String nuevo(Model model) {
         model.addAttribute("titulo", "Nueva Consulta");
         model.addAttribute("consulta", new Consulta());
-        model.addAttribute("mascotas", mascotaService.listar());      // Agregar lista de mascotas
-        model.addAttribute("veterinarios", veterinarioService.listar()); // Agregar lista de veterinarios
+        model.addAttribute("mascotas", mascotaService.listar());
+        model.addAttribute("veterinarios", veterinarioService.listar());
         return "formConsulta";
     }
 
