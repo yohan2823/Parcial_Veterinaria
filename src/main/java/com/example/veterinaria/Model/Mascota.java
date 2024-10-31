@@ -8,7 +8,6 @@ import jakarta.validation.constraints.PastOrPresent;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
-// Mascota.java
 @Entity
 public class Mascota {
     @Id
